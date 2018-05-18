@@ -29,7 +29,20 @@ function shuffle_array(array) {
 function Card(suit, rank) {
   this.suit = suit;
   this.rank = rank;
+
+  let card_value = function(rank){
+    if (rank === 'ace'){
+      return 11;
+    } else if (typeof rank === 'string'){
+      return 10;
+    } else if(typeof rank === 'number'){
+       return rank;
+    }
+  }
+  this.value = card_value(this.rank);
 }
+
+
 
 /* 
  * Generates an array of 52 playing cards.
