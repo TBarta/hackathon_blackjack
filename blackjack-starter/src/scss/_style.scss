@@ -62,14 +62,16 @@ body {
 
 .cards {
     display: flex;
-    flex-direction: row;
     justify-content: center;
     align-items: center;
+    flex-shrink: 1;
 }
 
 .card {
     background-image: url(../img/clubs-4.png);
     background-repeat: no-repeat;
+    flex-shrink: 1;
+    // flex-basis: 76px;
     width: 76px;
     height: 120px;
     background-size: contain;
@@ -92,5 +94,15 @@ h2 {
 
 #newGame {
     position: absolute;
-    margin-bottom: 20px;
+    bottom: 70px;
+}
+
+button {
+    border-radius: 20px;
+    border: 2px solid gold;
+    background-color: black;
+    padding: 10px;
+}
+.playerButt {
+    position: unset;
 }
