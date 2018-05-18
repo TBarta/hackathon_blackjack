@@ -1,11 +1,9 @@
 function Dealer (){
     this.dealer_cards = [];
 
+    this.sum  = 
+
     
-
-   
-
-    this.card_sum = this.total_card_sum;
 
     this.deal_card = function(array){
         this.dealer_cards.push(array[0]);
@@ -22,9 +20,11 @@ function Dealer (){
     this.total_card_sum = function(){
         let sum=0;
         for (let i=0; i<this.dealer_cards.length; i++){
-            sum = sum + this.dealer_cards.value[i];
+           return sum += this.dealer_cards[i].value;
         }
+
         return sum;
     }
+    this.card_sum = this.total_card_sum();
 }
 

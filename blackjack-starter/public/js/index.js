@@ -8,9 +8,15 @@ $(document).ready(function() {
 
 dealer.deal_card(test.deck);
 dealer.deal_card(test.deck);
+dealer.deal_card(test.deck);
+dealer.deal_card(test.deck);
 
-console.log(dealer.card_sum);
-
-console.log(test.deck);
-    
+let sum = function(){
+    let summ=0;
+    for (let i=0; i<dealer.dealer_cards.length; i++){
+         summ += dealer.dealer_cards[i].value;
+        }
+        return summ;
+}
+console.log(sum());
 });
