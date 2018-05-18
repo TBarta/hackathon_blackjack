@@ -7,8 +7,9 @@ $(document).ready(function() {
    console.log(dealer);
 
 dealer.deal_card(test.deck);
+dealer.deal_card(test.deck);
 
-console.log(dealer);
+console.log(dealer.card_sum);
 
 console.log(test.deck);
     
