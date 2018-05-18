@@ -8,11 +8,49 @@
   <title>BlackJack</title>
 </head>
 <body>
+  <div class="container">
+    <div class="table">
+      <div id="deck" class="deck">
+        <h2>Deck</h2>
+        <div class="deckCard"></div>
+        <button id="newGame">New Game</button>
+      </div>
+      <div id="field" class="field">
+        <div id="dealer" class="dealer">
+          <h2>Dealer</h2>
+          <div id="dealerHand" class="hand">
+            <div class="cards">
+              <div class="card"></div>
+              <div class="card"></div>
+              <div class="card"></div>
+              <div class="card"></div>
+              <div class="card"></div>
+            </div>
+          </div>
+        </div>
+        <div id="player" class="player">
+          <h2>Player</h2>
+          <div id="playerHand" class="hand">
+            <div class="cards">
+              <div class="card"></div>
+              <div class="card"></div>
+              <div class="card"></div>
+              <div class="card"></div>
+              <div class="card"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
   <script src="/js/jquery-3.3.1.min.js"></script>
+  <script src="/js/index.js"></script>
   <script src="/js/player.js"></script>
   <script src="/js/dealer.js"></script>
   <script src="/js/deck.js"></script>
   <script src="/js/cards.js"></script>
-  <script src="/js/index.js"></script>
 </body>
 </html>

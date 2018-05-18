@@ -1,0 +1,96 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(0, 82, 0);
+}
+
+.container {
+    color: gold;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.table {
+    border: 2px solid gold;
+    background-color: green;
+    margin: 30px;
+    height: 90vh;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+}
+
+.deck {
+    flex-basis: 250px;
+    flex-shrink: 0;
+    height: 100%;;
+    border-right: 2px solid gold;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.field {
+    flex-grow: 1;
+}
+
+.dealer {
+    height: 50%;
+    border-bottom: 2px dotted gold;
+    display: flex;
+    justify-content: center;
+}
+
+.player {
+    height: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+.hand {
+    width: 80%;
+    height: 60%;
+    margin: auto;
+    border: 1px solid gold;
+    border-radius: 5px;
+    background-color: rgb(0, 177, 0);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.cards {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    background-image: url(../img/clubs-4.png);
+    background-repeat: no-repeat;
+    width: 76px;
+    height: 120px;
+    background-size: contain;
+    margin: 10px;
+}
+
+.deckCard {
+    background-image: url(../img/revers.png);
+    background-repeat: no-repeat;
+    width: 100px;
+    height: 150px;
+    background-size: contain;
+    margin: auto;
+}
+
+h2 {
+    position: absolute;
+    text-align: center;
+}
+
+#newGame {
+    position: absolute;
+    margin-bottom: 20px;
+}
