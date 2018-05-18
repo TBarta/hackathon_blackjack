@@ -1,11 +1,11 @@
 'use strict';
 
 $(document).ready(function() {
-   let test =  new Deck();
+   
    let dealer = new Dealer();
    let player = new Player();
+   let test =  new Deck();
 
-   Game_start(test.deck);
 
    
 
@@ -30,21 +30,26 @@ let player_sum = function(){
 
 
 
-function comparison (x,y) {
+function comparison () {
 if(dealer_sum() > player_sum()) {
-    console.log("Dealer won")
+    $(".bust").html("You lost!");
 }
 else if (player_sum() > dealer_sum()) {
-    console.log("Player won")
+    $(".bust").html("You won!");
 }
-else {console.log("tie")}
+else {
+    $(".bust").html("Tie");
+}
 
 }
 
 
-comparison();
+
+
+
 
 function Game_start(array) {
+
     for (var i = 0; i < 2; i++) {
         player.player_cards.push(array[0]);
         array.splice(0, 1); 
@@ -52,5 +57,80 @@ function Game_start(array) {
         array.splice(0, 1); 
     }
 }
+
+function Bust (){
+    if (player_sum() > 21) {
+        $(".bust").html("You lost!");
+        $(".revers").toggleClass(dealer.dealer_cards[1].suit+ "-" +dealer.dealer_cards[1].rank)
+    }
+}
+function dealers_turn () {
+while(dealer_sum() < 17 )
+ {
+    dealer.deal_card();
+    update_dealer();
+  
+    } 
+    comparison();   
+
+}
+
+
+
+function update_html() {
+    $("<div>")
+    .addClass(player.player_cards[0].suit+ "-" +player.player_cards[0].rank)
+    .addClass("card")
+    .appendTo($("#playerCards"))
+    $("<div>")
+    .addClass(player.player_cards[1].suit+ "-" +player.player_cards[1].rank)
+    .addClass("card")
+    .appendTo($("#playerCards"))
+    $("<div>")
+    .addClass(dealer.dealer_cards[0].suit+ "-" +dealer.dealer_cards[0].rank)
+    .addClass("card")
+    .appendTo($("#dealerCards"))
+    $("<div>")
+    .addClass("revers card")
+    .appendTo($("#dealerCards"))
+}
+
+function update_dealer () {
+    $("<div>")
+    .addClass(dealer.dealer_cards[2].suit + "-" +dealer.dealer_cards[2].rank)
+    .addClass("card")
+    .appendTo($("#dealerCards"))
+}
+
+function update_player () {
+    $("<div>")
+    .addClass(player.player_cards[1+clickcounter].suit+ "-" +player.player_cards[1+clickcounter].rank)
+    .addClass("card")
+    .appendTo($("#playerCards"))
+}
+$("#stay").click(function (){
+    $(".revers").toggleClass(dealer.dealer_cards[1].suit+ "-" +dealer.dealer_cards[1].rank)
+    update_dealer();
+    dealers_turn();
+})
+
+let clickcounter = 0;
+
+$("#newGame").click(function(){
+    $("#playerCards").empty();
+    $("#dealerCards").empty();
+    Game_start(test.deck);
+    update_html();
+})
+$("#hit").click(function() {
+    player.hit(test.deck);
+    clickcounter++;
+    update_player();
+    Bust();
+   
+
+})
+
+
 });
 

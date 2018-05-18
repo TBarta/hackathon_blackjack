@@ -4,8 +4,8 @@ function Player () {
     this.counter = 0;   
 
     this.bust = function(){
-        if(count() > 21){
-            $("whatever").html("You went over 21! YOU LOST!")
+        if(this.counter > 21){
+            alert("You went over 21! YOU LOST!")
             /*some function to end the game */
         }
     }
@@ -14,7 +14,7 @@ function Player () {
     }
     this.hit = function(array) {
         this.player_cards.push(array[0]);
-        array.splice(0, 1); 
+        array.splice(0, 1);
     }
 
     this.count = function() {
