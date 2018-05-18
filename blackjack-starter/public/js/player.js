@@ -23,11 +23,3 @@ function Player () {
         }
     }
 }
-function Game_start(array) {
-    for (var i = 0; i < 2;i++) {
-        player.player_cards.push(array[0]);
-        array.splice(0, 1); 
-        dealer.dealer_cards.push(array[0]);
-        array.splice(0, 1); 
-    }
-}
