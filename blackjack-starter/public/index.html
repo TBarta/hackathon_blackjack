@@ -19,7 +19,7 @@
         <div id="dealer" class="dealer">
           <h2>Dealer</h2>
           <div id="dealerHand" class="hand">
-            <div class="cards">
+            <div id="dealerCards" class="cards">
               <div class="card"></div>
               <div class="card"></div>
               <div class="card"></div>
@@ -31,7 +31,7 @@
         <div id="player" class="player">
           <h2>Player</h2>
           <div id="playerHand" class="hand">
-            <div class="cards">
+            <div id="playerCards" class="cards">
               <div class="card"></div>
               <div class="card"></div>
               <div class="card"></div>
@@ -39,7 +39,9 @@
               <div class="card"></div>
             </div>
           </div>
-          <div>
+          <div class="controls">
+            <div class="wallet">Wallet: $1000</div>
+            <input id="bet" placeholder="Place Your Bet">
             <button id="hit" class="playerButt">Hit</button>
             <button id="stay" class="playerButt">Stay</button>
           </div>
